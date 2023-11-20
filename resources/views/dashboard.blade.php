@@ -46,6 +46,14 @@
 
                     @elseif(auth()->user()->role->name == 'client')
 
+                        @if(session()->has('error'))
+                                    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+                                        <span class="font-medium"></span>  {{ session()->get('error') }}
+                                    </div>
+                        @endif
+
+
+
                         <!-- component -->
                         <div class='flex items-center'>
                             <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
